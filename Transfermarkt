@@ -11,16 +11,16 @@ public class Transfermarkt {
     Transfermarkt() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("If you want to check the winner of each season, please enter 1. If you want to make a prediction on one season, please enter 2");
+        System.out.println("If you want to check the winner of each season, please enter 1. If you want to make a prediction on one season, please enter 2,If you want to store some race year data,please enter 3");
         int a;
         a = scanner.nextInt();
         if (a == 1) {
             Search();
         } else if (a == 2) {
-            boolean a1=true;
-            while(a1){
+            boolean a1 = true;
+            while (a1) {
 
-                System.out.println("If you want to simulate the result of a competition, please enter 1. If you want to make a seasonal prediction, please enter 2");
+                System.out.println("If you want to simulate the result of a competition, please enter 1. If you want to make a seasonal prediction, please enter 2.");
                 int c;
                 c = scanner.nextInt();
                 if (c == 1) {
@@ -38,665 +38,548 @@ public class Transfermarkt {
                     } else {
                         System.out.println("Beyond the scope of service!");
                     }
-
-
-                }System.out.println("If you want to continue the prediction, then input 1, otherwise input 2");
+                }
+                System.out.println("If you want to continue the prediction, then input 1, otherwise input 2");
                 int as;
-                as=scanner.nextInt();
-                if(as==1){
-                    a1=true;
-                } else if (as==2) {
-                    a1=false;
+                as = scanner.nextInt();
+                if (as == 1) {
+                    a1 = true;
+                } else if (as == 2) {
+                    a1 = false;
 
                 }
-                }
+            }
+        } else if (a == 3) {
+            create();
         }
     }
 
     public static void Search() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type in the year:");
-        int year = scanner.nextInt();
+        List<shuju> Shuju = new ArrayList<>();
+        int year1 = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Type in the league/cup (premier League, laliga, UEFA，bundesliga):");
         String leagueOrCup = scanner.nextLine();
-        if (year == 2024) {
+        shuju soccer2024 = new shuju(2024, "Manchester City", "Real Madrid", "Real Madrid", "Bayer Leverkusen");
+        shuju soccer2023 = new shuju(2023, "Manchester City", "Barcelona", "Manchester United", "FC Bayern Munich");
+        shuju soccer2022 = new shuju(2022, "Manchester City", "Real Madrid", "Chelsea", "FC Bayern Munich");
+        shuju soccer2021 = new shuju(2021, "Manchester City", "Atletico Madrid", "FC Bayern Munich", "FC Bayern Munich");
+        shuju soccer2020 = new shuju(2020, "Liverpool", "Real Madrid", "Real Madrid", "Bayer Leverkusen");
+        shuju soccer2019 = new shuju(2019, "Manchester City", "Barcelona", "Liverpool", "FC Bayern Munich");
+        shuju soccer2018 = new shuju(2018, "Manchester City", "Barcelona", "Real Madrid", "FC Bayern Munich");
+        shuju soccer2017 = new shuju(2017, "Chelsea", "Real Madrid", "Real Madrid", "FC Bayern Munich");
+        shuju soccer2016 = new shuju(2016, "Leicester City", "Real Madrid", "Real Madrid", "FC Bayern Munich");
+        shuju soccer2015 = new shuju(2015, "Chelsea", "Barcelona", "Barcelona", "FC Bayern Munich");
+        if (year1 == 2024) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2024.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2024.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2024.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was Bayer Leverkusen");
+                    soccer2024.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-
-        } else if (year == 2023) {
+        } else if (year1 == 2023) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2023.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Barcelona");
+                    soccer2023.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Manchester United");
+                    soccer2023.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2023.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2022) {
+        } else if (year1 == 2022) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2022.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2022.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2022.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2022.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-
-
-        } else if (year == 2021) {
+        } else if (year1 == 2021) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2021.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Atletico Madrid");
+                    soccer2021.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Chelsea");
+                    soccer2021.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2021.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2020) {
+        } else if (year1 == 2020) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Liverpool");
+                    soccer2020.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2020.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2020.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2020.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2019) {
+        } else if (year1 == 2019) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2019.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Barcelona");
+                    soccer2019.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Liverpool");
+                    soccer2019.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2019.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2018) {
+        } else if (year1 == 2018) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Manchester City");
+                    soccer2018.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Barcelona");
+                    soccer2018.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2018.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2018.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2017) {
+        } else if (year1 == 2017) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Chelsea");
+                    soccer2017.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2017.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2017.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2017.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2016) {
+        } else if (year1 == 2016) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Leicester City");
+                    soccer2016.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2016.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Real Madrid");
+                    soccer2016.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2016.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
             }
-        } else if (year == 2015) {
+        } else if (year1 == 2015) {
             switch (leagueOrCup.toLowerCase()) {
                 case "premier League":
-                    System.out.println("The winner was Chelsea");
+                    soccer2015.premier_League_search();
                     break;
                 case "laliga":
-                    System.out.println("The winner was Barcelona");
+                    soccer2015.laliga_search();
                     break;
                 case "uefa":
-                    System.out.println("The winner was Barcelona");
+                    soccer2015.uefa_search();
                     break;
                 case "bundesliga":
-                    System.out.println("The winner was FC Bayern Munich");
+                    soccer2015.bundesliga_search();
                 default:
                     System.out.println("No record found for this league/cup.");
-            }
-        } else if (year == 2014) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "Pemier League":
-                    System.out.println("The winner was Manchester City");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Real Madrid");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        }else if (year == 2013) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Manchester United");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Barcelona");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        }else if (year == 2012) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Manchester City");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Real Madrid");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Dortmund");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Chelsea");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        }else if (year==2011) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Manchester United");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Barcelona");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Dortmund");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Barcelona");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        } else if (year==2010) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Chelsea");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Barcelona");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Inter Milan");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        } else if (year==2009) {
-        switch (leagueOrCup.toLowerCase()) {
-        case "premier League":
-        System.out.println("The winner was Manchester United");
-                break;
-                        case "laliga":
-                        System.out.println("The winner was Barcelona");
-                break;
-                        case "bundesliga":
-                        System.out.println("The winner was Wolfsburg");
-                break;
-                        case "uefa":
-                        System.out.println("The winner was Barcelona");
-                break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-                }
-        } else if (year==2008) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Manchester United");
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Real Madrid");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was AC Milan");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-            }
-        }else if (year==2007) {
-        switch (leagueOrCup.toLowerCase()) {
-            case "premier League":
-                System.out.println("The winner was Manchester United");
-                break;
-            case "laliga":
-                System.out.println("The winner was Real Madrid");
-                break;
-            case "bundesliga":
-                System.out.println("The winner was Stuttgart");
-            case "uefa":
-                System.out.println("The winner was AcMilan");
-                break;
-            default:
-                System.out.println("No record found for this league/cup.");
-            }
-        }
-            else if (year==2006) {
-                switch (leagueOrCup.toLowerCase()) {
-                    case "premier League":
-                        System.out.println("The winner was Chelsea");
-                        break;
-                    case "laliga":
-                        System.out.println("The winner was Valencia");
-                        break;
-                    case "bundesliga":
-                        System.out.println("The winner was Bayern Munich");
-                        break;
-                    case "uefa":
-                        System.out.println("The winner was Barcelona");
-                        break;
-                    default:
-                        System.out.println("No record found for this league/cup.");
-                }
-            }else if (year==2005){
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Chelsea");
-                case "laliga":
-                    System.out.println("The winner was Barcelona");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Liverpool");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-                }
-            } else if (year == 2004) {
-            switch (leagueOrCup.toLowerCase()) {
-                case "premier League":
-                    System.out.println("The winner was Arsenal" );
-                    break;
-                case "laliga":
-                    System.out.println("The winner was Valencia");
-                    break;
-                case "bundesliga":
-                    System.out.println("The winner was Bayern Munich");
-                    break;
-                case "uefa":
-                    System.out.println("The winner was Porto");
-                    break;
-                default:
-                    System.out.println("No record found for this league/cup.");
-
             }
         }
     }
-        public void Singlegame () {
-            Random random = new Random();
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("1.Arsenal    2.Mancheter city     3.Liverpool         4.Aston Villa                5.Tottenham Hotspur");
-            System.out.println("6.Chelsea    7.Newcastle United   8.Manchester United 9.West Ham United            10.Crystal Palace");
-            System.out.println("11.Brighton  12.Bournemouth       13.Fulham           14.Wolverhampton Wanderers   15.Everton ");
-            System.out.println("16.Brentford 17.Nottingham Forest 18.Luton Town       19.Burnlney                  20.Sheffield United");
-            System.out.println("Enter the number of the team you want to predict in order (remember to add a empty space between the two numbers)");
-            int team1, team2;
-            team1 = scanner.nextInt();
-            team2 = scanner.nextInt();
-            int score1 = 0, score2 = 0;
-            int gailv = 50;
-            int f = 5;
-            gailv = gailv + (team2 - team1) * 1;
-            for (int i = 0; i <= 90; i++) {
-                int sq;
-                sq = random.nextInt(100);
-                if (sq <= gailv) {
-                    f++;
-                } else {
-                    f--;
-                }
-                if (f == 10) {
-                    score1++;
-                    f = 5;
-                }
-                if (f == 0) {
-                    score2++;
-                    f = 5;
-                }
-            }
-            System.out.println("The result of the game is predicted as follow  => " + score1 + ":" + score2);
-        }
 
-        public void premier_League_competitionseason () {
-            Random random = new Random();
-            int score[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-            int paixu[] = new int[30];
-            String name[] = {"Mancheter city", "Arsenal", "Liverpool", "Aston Villa", "Tottenham Hotspur", "Chelsea", "Newcastle United", "Manchester United", "West Ham United", "Crystal Palace", "Brighton", "Bournemouth", "Fulham", "Wolverhampton Wanderers", "Everton", "Brentford", "Nottingham Forest", "Luton Town", "Burnlney", "Sheffield United"};
-            for (int i = 0; i < 19; i++) {
-                for (int m = i + 1; m <= 19; m++) {
-                    double gailv = 50;
-                    gailv = gailv + (m - i);
-                    double gailvzhu = gailv * (1.1);
-                    double gailvci = gailv * (0.9);
-                    int a1 = 0, a2 = 0;
-                    for (int mm = 0; mm <= 19; mm++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvzhu) {
-                            a1++;
-                        } else {
-                            a2++;
-                        }
-                    }
-                    if (a1 > a2) {
-                        score[i] = score[i] + 3;
-                    } else if (a1 < a2) {
-                        score[m] = score[m] + 3;
-                    } else if (a1 == a2) {
-                        score[i] = score[i] + 1;
-                        score[m] = score[m] + 1;
-                    }
-                    int a3 = 0, a4 = 0;
-                    for (int nn = 0; nn <= 19; nn++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvci) {
-                            a3++;
-                        } else {
-                            a4++;
-                        }
-                    }
-                    if (a3 > a4) {
-                        score[i] = score[i] + 3;
-                    } else if (a3 < a4) {
-                        score[m] = score[m] + 3;
-                    } else if (a3 == a4) {
-                        score[i] = score[i] + 1;
-                        score[m] = score[m] + 1;
+    public void Singlegame() {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1.Arsenal    2.Mancheter city     3.Liverpool         4.Aston Villa                5.Tottenham Hotspur");
+        System.out.println("6.Chelsea    7.Newcastle United   8.Manchester United 9.West Ham United            10.Crystal Palace");
+        System.out.println("11.Brighton  12.Bournemouth       13.Fulham           14.Wolverhampton Wanderers   15.Everton ");
+        System.out.println("16.Brentford 17.Nottingham Forest 18.Luton Town       19.Burnlney                  20.Sheffield United");
+        System.out.println("Enter the number of the team you want to predict in order (remember to add a empty space between the two numbers)");
+        int team1, team2;
+        team1 = scanner.nextInt();
+        team2 = scanner.nextInt();
+        int score1 = 0, score2 = 0;
+        int gailv = 50;
+        int f = 5;
+        gailv = gailv + (team2 - team1) * 1;
+        for (int i = 0; i <= 90; i++) {
+            int sq;
+            sq = random.nextInt(100);
+            if (sq <= gailv) {
+                f++;
+            } else {
+                f--;
+            }
+            if (f == 10) {
+                score1++;
+                f = 5;
+            }
+            if (f == 0) {
+                score2++;
+                f = 5;
+            }
+        }
+        System.out.println("The result of the game is predicted as follow  => " + score1 + ":" + score2);
+    }
+
+    public void premier_League_competitionseason() {
+        Random random = new Random();
+        int score[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int paixu[] = new int[30];
+        String name[] = {"Mancheter city", "Arsenal", "Liverpool", "Aston Villa", "Tottenham Hotspur", "Chelsea", "Newcastle United", "Manchester United", "West Ham United", "Crystal Palace", "Brighton", "Bournemouth", "Fulham", "Wolverhampton Wanderers", "Everton", "Brentford", "Nottingham Forest", "Luton Town", "Burnlney", "Sheffield United"};
+        for (int i = 0; i < 19; i++) {
+            for (int m = i + 1; m <= 19; m++) {
+                double gailv = 50;
+                gailv = gailv + (m - i);
+                double gailvzhu = gailv * (1.1);
+                double gailvci = gailv * (0.9);
+                int a1 = 0, a2 = 0;
+                for (int mm = 0; mm <= 19; mm++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvzhu) {
+                        a1++;
+                    } else {
+                        a2++;
                     }
                 }
+                if (a1 > a2) {
+                    score[i] = score[i] + 3;
+                } else if (a1 < a2) {
+                    score[m] = score[m] + 3;
+                } else if (a1 == a2) {
+                    score[i] = score[i] + 1;
+                    score[m] = score[m] + 1;
+                }
+                int a3 = 0, a4 = 0;
+                for (int nn = 0; nn <= 19; nn++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvci) {
+                        a3++;
+                    } else {
+                        a4++;
+                    }
+                }
+                if (a3 > a4) {
+                    score[i] = score[i] + 3;
+                } else if (a3 < a4) {
+                    score[m] = score[m] + 3;
+                } else if (a3 == a4) {
+                    score[i] = score[i] + 1;
+                    score[m] = score[m] + 1;
+                }
             }
+        }
+        for (int xx = 0; xx <= 19; xx++) {
+            paixu[xx] = score[xx];
+        }
+        for (int ss = 0; ss <= 19; ss++) {
+            for (int sss = 0; sss < 19; sss++) {
+                if (paixu[sss] < paixu[sss + 1]) {
+                    int ssss = paixu[sss];
+                    paixu[sss] = paixu[sss + 1];
+                    paixu[sss + 1] = ssss;
+                }
+            }
+        }
+        int m1 = 0;
+        int m2 = 0;
+        for (int x = 0; x <= 19; x++) {
+            int m = 0;
+
+
             for (int xx = 0; xx <= 19; xx++) {
-                paixu[xx] = score[xx];
-            }
-            for (int ss = 0; ss <= 19; ss++) {
-                for (int sss = 0; sss < 19; sss++) {
-                    if (paixu[sss] < paixu[sss + 1]) {
-                        int ssss = paixu[sss];
-                        paixu[sss] = paixu[sss + 1];
-                        paixu[sss + 1] = ssss;
+                if (paixu[x] == score[xx]) {
+                    if (m2 != paixu[x]) {
+                        m1 = 0;
                     }
+                    m = xx + m1;
+                    if (paixu[x] == paixu[x + 1]) {
+                        m1++;
+                        m2 = paixu[x];
+                    }
+                    break;
+
                 }
             }
-            int m1=0;
-            int m2=0;
-            for (int x = 0; x <= 19; x++) {
-                int m = 0;
-
-
-                for (int xx = 0; xx <= 19; xx++) {
-                    if (paixu[x] == score[xx]) {
-                        if(m2!=paixu[x]){
-                            m1=0;
-                        }
-                        m = xx+m1;
-                        if(paixu[x]==paixu[x+1]){
-                            m1++;
-                            m2=paixu[x];
-                        }
-                        break;
-
-                    }
-                }
-                System.out.println("The total points of the " + name[m] + " of this season is " + paixu[x]);
-            }
-
-
+            System.out.println("The total points of the " + name[m] + " of this season is " + paixu[x]);
         }
-        public void spanlish_competitionseason () {
-            Random random = new Random();
-            int fenshu[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-            int paixu[] = new int[30];
-            String name[] = {"Real Madrid", "Barcelona", "Atlético  Madrid", "Villarreal CF", "Athletic Club", "CD Leganés", "Real Sociedad", "Sevilla FC", "Valencia CF", "Deportivo La Coruña", "Málaga CF", "Huesca FC", "Osasuna", "Real Betis", "RCD Espanyol", "Levante UD", "RCD Mallorca", "Granada CF", "CD Leganes", "CD Cañón de la Virgen"};
-            for (int i = 0; i < 19; i++) {
-                for (int m = i + 1; m <= 19; m++) {
-                    double gailv = 50;
-                    gailv = gailv + (m - i);
-                    double gailvzhu = gailv * (1.1);
-                    double gailvci = gailv * (0.9);
-                    int a1 = 0, a2 = 0;
-                    for (int mm = 0; mm <= 19; mm++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvzhu) {
-                            a1++;
-                        } else {
-                            a2++;
-                        }
-                    }
-                    if (a1 > a2) {
-                        fenshu[i] = fenshu[i] + 3;
-                    } else if (a1 < a2) {
-                        fenshu[m] = fenshu[m] + 3;
-                    } else if (a1 == a2) {
-                        fenshu[i] = fenshu[i] + 1;
-                        fenshu[m] = fenshu[m] + 1;
-                    }
-                    int a3 = 0, a4 = 0;
-                    for (int nn = 0; nn <= 19; nn++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvci) {
-                            a3++;
-                        } else {
-                            a4++;
-                        }
-                    }
-                    if (a3 > a4) {
-                        fenshu[i] = fenshu[i] + 3;
-                    } else if (a3 < a4) {
-                        fenshu[m] = fenshu[m] + 3;
-                    } else if (a3 == a4) {
-                        fenshu[i] = fenshu[i] + 1;
-                        fenshu[m] = fenshu[m] + 1;
+
+
+    }
+
+    public void spanlish_competitionseason() {
+        Random random = new Random();
+        int fenshu[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int paixu[] = new int[30];
+        String name[] = {"Real Madrid", "Barcelona", "Atlético  Madrid", "Villarreal CF", "Athletic Club", "CD Leganés", "Real Sociedad", "Sevilla FC", "Valencia CF", "Deportivo La Coruña", "Málaga CF", "Huesca FC", "Osasuna", "Real Betis", "RCD Espanyol", "Levante UD", "RCD Mallorca", "Granada CF", "CD Leganes", "CD Cañón de la Virgen"};
+        for (int i = 0; i < 19; i++) {
+            for (int m = i + 1; m <= 19; m++) {
+                double gailv = 50;
+                gailv = gailv + (m - i);
+                double gailvzhu = gailv * (1.1);
+                double gailvci = gailv * (0.9);
+                int a1 = 0, a2 = 0;
+                for (int mm = 0; mm <= 19; mm++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvzhu) {
+                        a1++;
+                    } else {
+                        a2++;
                     }
                 }
+                if (a1 > a2) {
+                    fenshu[i] = fenshu[i] + 3;
+                } else if (a1 < a2) {
+                    fenshu[m] = fenshu[m] + 3;
+                } else if (a1 == a2) {
+                    fenshu[i] = fenshu[i] + 1;
+                    fenshu[m] = fenshu[m] + 1;
+                }
+                int a3 = 0, a4 = 0;
+                for (int nn = 0; nn <= 19; nn++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvci) {
+                        a3++;
+                    } else {
+                        a4++;
+                    }
+                }
+                if (a3 > a4) {
+                    fenshu[i] = fenshu[i] + 3;
+                } else if (a3 < a4) {
+                    fenshu[m] = fenshu[m] + 3;
+                } else if (a3 == a4) {
+                    fenshu[i] = fenshu[i] + 1;
+                    fenshu[m] = fenshu[m] + 1;
+                }
             }
+        }
+        for (int xx = 0; xx <= 19; xx++) {
+            paixu[xx] = fenshu[xx];
+        }
+        for (int ss = 0; ss <= 19; ss++) {
+            for (int sss = 0; sss < 19; sss++) {
+                if (paixu[sss] < paixu[sss + 1]) {
+                    int ssss = paixu[sss];
+                    paixu[sss] = paixu[sss + 1];
+                    paixu[sss + 1] = ssss;
+                }
+            }
+        }
+        int m1 = 0;
+        int m2 = 0;
+        for (int x = 0; x <= 19; x++) {
+            int m = 0;
+
+
             for (int xx = 0; xx <= 19; xx++) {
-                paixu[xx] = fenshu[xx];
-            }
-            for (int ss = 0; ss <= 19; ss++) {
-                for (int sss = 0; sss < 19; sss++) {
-                    if (paixu[sss] < paixu[sss + 1]) {
-                        int ssss = paixu[sss];
-                        paixu[sss] = paixu[sss + 1];
-                        paixu[sss + 1] = ssss;
+                if (paixu[x] == fenshu[xx]) {
+                    if (m2 != paixu[x]) {
+                        m1 = 0;
                     }
+                    m = xx + m1;
+                    if (paixu[x] == paixu[x + 1]) {
+                        m1++;
+                        m2 = paixu[x];
+                    }
+                    break;
+
                 }
             }
-            int m1=0;
-            int m2=0;
-            for (int x = 0; x <= 19; x++) {
-                int m = 0;
+            System.out.println("The total points of the " + name[m] + " of the season is " + paixu[x]);
+        }
+    }
 
-
-                for (int xx = 0; xx <= 19; xx++) {
-                    if (paixu[x] == fenshu[xx]) {
-                        if(m2!=paixu[x]){
-                            m1=0;
-                        }
-                        m = xx+m1;
-                        if(paixu[x]==paixu[x+1]){
-                            m1++;
-                            m2=paixu[x];
-                        }
-                        break;
-
+    public void bundesliga_competitionseason() {
+        Random random = new Random();
+        int fenshu[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int paixu[] = new int[30];
+        String name[] = {"Bayer 04 Leverkusen", "Bayern Munich", "Borussia Dortmund", "RB Leipzig", "VfB Stuttgart", "TSG Hoffenheim", "Eintracht Frankfurt", "FC Heidenheim", "VfL Wolfsburg", "Borussia Mönchengladbach", "SC Freiburg", "FC Köln", "Werder Bremen", "FC Augsburg", "Union Berlin", "VfL Bochum", "SV Darmstadt 98", "FSV Mainz 05"};
+        for (int i = 0; i < 17; i++) {
+            for (int m = i + 1; m <= 17; m++) {
+                double gailv = 50;
+                gailv = gailv + (m - i);
+                double gailvzhu = gailv * (1.1);
+                double gailvci = gailv * (0.9);
+                int a1 = 0, a2 = 0;
+                for (int mm = 0; mm <= 19; mm++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvzhu) {
+                        a1++;
+                    } else {
+                        a2++;
                     }
                 }
-                System.out.println("The total points of the " + name[m] + " of the season is " + paixu[x]);
+                if (a1 > a2) {
+                    fenshu[i] = fenshu[i] + 3;
+                } else if (a1 < a2) {
+                    fenshu[m] = fenshu[m] + 3;
+                } else if (a1 == a2) {
+                    fenshu[i] = fenshu[i] + 1;
+                    fenshu[m] = fenshu[m] + 1;
+                }
+                int a3 = 0, a4 = 0;
+                for (int nn = 0; nn <= 19; nn++) {
+                    double suiji = random.nextDouble(0, 100);
+                    if (suiji <= gailvci) {
+                        a3++;
+                    } else {
+                        a4++;
+                    }
+                }
+                if (a3 > a4) {
+                    fenshu[i] = fenshu[i] + 3;
+                } else if (a3 < a4) {
+                    fenshu[m] = fenshu[m] + 3;
+                } else if (a3 == a4) {
+                    fenshu[i] = fenshu[i] + 1;
+                    fenshu[m] = fenshu[m] + 1;
+                }
             }
         }
-        public void bundesliga_competitionseason () {
-            Random random = new Random();
-            int fenshu[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-            int paixu[] = new int[30];
-            String name[] = {"Bayer 04 Leverkusen", "Bayern Munich", "Borussia Dortmund", "RB Leipzig", "VfB Stuttgart", "TSG Hoffenheim","Eintracht Frankfurt", "FC Heidenheim", "VfL Wolfsburg", "Borussia Mönchengladbach", "SC Freiburg", "FC Köln", "Werder Bremen", "FC Augsburg", "Union Berlin","VfL Bochum","SV Darmstadt 98","FSV Mainz 05"};
-            for (int i = 0; i < 17; i++) {
-                for (int m = i + 1; m <= 17; m++) {
-                    double gailv = 50;
-                    gailv = gailv + (m - i);
-                    double gailvzhu = gailv * (1.1);
-                    double gailvci = gailv * (0.9);
-                    int a1 = 0, a2 = 0;
-                    for (int mm = 0; mm <= 19; mm++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvzhu) {
-                            a1++;
-                        } else {
-                            a2++;
-                        }
-                    }
-                    if (a1 > a2) {
-                        fenshu[i] = fenshu[i] + 3;
-                    } else if (a1 < a2) {
-                        fenshu[m] = fenshu[m] + 3;
-                    } else if (a1 == a2) {
-                        fenshu[i] = fenshu[i] + 1;
-                        fenshu[m] = fenshu[m] + 1;
-                    }
-                    int a3 = 0, a4 = 0;
-                    for (int nn = 0; nn <= 19; nn++) {
-                        double suiji = random.nextDouble(0, 100);
-                        if (suiji <= gailvci) {
-                            a3++;
-                        } else {
-                            a4++;
-                        }
-                    }
-                    if (a3 > a4) {
-                        fenshu[i] = fenshu[i] + 3;
-                    } else if (a3 < a4) {
-                        fenshu[m] = fenshu[m] + 3;
-                    } else if (a3 == a4) {
-                        fenshu[i] = fenshu[i] + 1;
-                        fenshu[m] = fenshu[m] + 1;
-                    }
+        for (int xx = 0; xx <= 17; xx++) {
+            paixu[xx] = fenshu[xx];
+        }
+        for (int ss = 0; ss <= 17; ss++) {
+            for (int sss = 0; sss < 17; sss++) {
+                if (paixu[sss] < paixu[sss + 1]) {
+                    int ssss = paixu[sss];
+                    paixu[sss] = paixu[sss + 1];
+                    paixu[sss + 1] = ssss;
                 }
             }
+        }
+        int m1 = 0;
+        int m2 = 0;
+        for (int x = 0; x <= 17; x++) {
+            int m = 0;
+
             for (int xx = 0; xx <= 17; xx++) {
-                paixu[xx] = fenshu[xx];
+                if (paixu[x] == fenshu[xx]) {
+
+                    if (m2 != paixu[x]) {
+                        m1 = 0;
+                    }
+                    m = xx + m1;
+                    if (paixu[x] == paixu[x + 1]) {
+                        m1++;
+                        m2 = paixu[x];
+                    }
+                    break;
+
+                }
+
+
             }
-            for (int ss = 0; ss <= 17; ss++) {
-                for (int sss = 0; sss < 17; sss++) {
-                    if (paixu[sss] < paixu[sss + 1]) {
-                        int ssss = paixu[sss];
-                        paixu[sss] = paixu[sss + 1];
-                        paixu[sss + 1] = ssss;
+            System.out.println("The total points of the " + name[m] + " of the season is " + paixu[x]);
+        }
+
+    }
+
+    public void create() {
+        List<shuju> Shuju = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("If you want to create a new one,please enter 1.");
+            System.out.println("If you want to delete,please enter 2.");
+            System.out.println("If you want to search total date,please enter 3.");
+            System.out.println("If you want to finish,please enter 4.");
+            int a;
+            String mn;
+            a = scanner.nextInt();
+            if (a == 1) {
+                shuju shujunew = new shuju();
+                System.out.println("please enter year");
+                int b = scanner.nextInt();
+                mn = scanner.nextLine();
+                shujunew.yearadd(b);
+                System.out.println("please enter the name of competition");
+                String name1 = scanner.nextLine();
+                shujunew.nameadd(name1);
+                System.out.println("please enter the winner");
+                String winner1 = scanner.nextLine();
+                shujunew.winneradd(winner1);
+                Shuju.add(shujunew);
+                System.out.println("The new one is set.");
+            } else if (a == 2) {
+                System.out.println("Which one do you want to delete.");
+                System.out.println("please enter year.");
+                int year2 = scanner.nextInt();
+                mn = scanner.nextLine();
+                System.out.println("please enter the name of competition");
+                String name2 = scanner.nextLine();
+                System.out.println("please enter the winner.");
+                String winner2 = scanner.nextLine();
+                boolean mm = false;
+                for (int i = 0; i <= Shuju.size(); i++) {
+                    if (Shuju.get(i).name == name2 && Shuju.get(i).year == year2 && Shuju.get(i).winner == winner2) {
+                        Shuju.remove(i);
+                        mm = true;
                     }
                 }
-            }
-            int m1=0;
-            int m2=0;
-            for (int x = 0; x <=17; x++) {
-                int m = 0;
-
-                for (int xx = 0; xx <= 17; xx++) {
-                    if (paixu[x] == fenshu[xx]) {
-
-                        if (m2 != paixu[x]) {
-                            m1 = 0;
-                        }
-                        m = xx + m1;
-                        if (paixu[x] == paixu[x + 1]) {
-                            m1++;
-                            m2 = paixu[x];
-                        }
-                        break;
-
-                    }
-
-
+                if (mm) {
+                    System.out.println("It has been deleted.");
+                } else {
+                    System.out.println("We did not find the target.");
                 }
-
-                System.out.println("The total points of the " + name[m] + " of the season is " + paixu[x]);
+            } else if (a == 3) {
+                System.out.println("Here you are:");
+                for (int i = 0; i < Shuju.size(); i++) {
+                    System.out.println(Shuju.get(i).year + " " + Shuju.get(i).name + " " + Shuju.get(i).winner);
                 }
-
+            } else if (a == 4) {
+                break;
+            } else {
+                System.out.println("No record found for this league/cup.");
             }
         }
+    }
+}
