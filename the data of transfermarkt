@@ -1,0 +1,34 @@
+public class shuju {
+    int year;
+    String premier_League,laliga,bundesliga,uefa,name,winner;
+    shuju(){};
+     shuju(int a,String b,String c,String d,String e){
+         year=a;
+         premier_League=b;
+         laliga=c;
+         uefa=d;
+         bundesliga=e;
+     }
+    void yearadd(int year){
+        this.year=year;
+    }
+    void nameadd(String name){
+        this.name=name;
+    }
+    void winneradd(String winner){
+         this.winner=winner;
+     }
+     void premier_League_search(){
+         System.out.println(year+":"+premier_League);
+    }
+    void laliga_search(){
+        System.out.println(year+":"+laliga);
+    }
+    void bundesliga_search(){
+        System.out.println(year+":"+bundesliga);
+    }
+    void uefa_search(){
+        System.out.println(year+":"+uefa);
+    }
+
+}
